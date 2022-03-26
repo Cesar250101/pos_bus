@@ -1,0 +1,12 @@
+<odoo>
+
+    <template id="pos_bus_assets_backend" name="pos_bus assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <!--<link rel="stylesheet" href="/pos_bus/static/src/css/sync_session.css"/>-->
+            <script type="text/javascript" src="/pos_bus/static/src/js/bus.js"/>
+            <script type="text/javascript" src="/pos_bus/static/src/js/rpc.js"/>
+            <script type="text/javascript" src="/pos_bus/static/src/js/restaurant.js"/>
+            <script type="text/javascript" src="/pos_bus/static/src/js/sync_session.js"/>
+        </xpath>
+    </template>
+</odoo>

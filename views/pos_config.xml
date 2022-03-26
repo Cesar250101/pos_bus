@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="pos_config_sync_session">
+            <field name="name">pos.config.sync.session</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <group string="Sync Multi Sessions">
+                        <group id="sync_multi_session">
+                            <field name="sync_multi_session"/>
+                            <field name="sync_multi_session_times_refresh"
+                                   attrs="{'invisible': [('sync_multi_session', '=', False)], 'required' : [('sync_multi_session', '=', True)]}"/>
+                            <field name="display_person_add_line"
+                                   attrs="{'invisible': [('sync_multi_session', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="bus_id"
+                                   attrs="{'invisible': [('sync_multi_session', '=', False)], 'required' : [('sync_multi_session', '=', True)]}"/>
+                            <field name="user_id"
+                                   attrs="{'invisible': [('sync_multi_session', '=', False)], 'required' : [('sync_multi_session', '=', True)]}"/>
+                        </group>
+                        <group>
+                            <field name="sync_multi_session_offline"
+                                   attrs="{'invisible': [('sync_multi_session', '=', False)], 'required' : [('sync_multi_session', '=', True)]}"/>
+                            <field name="sync_multi_session_offline_iot_ids"
+                                   attrs="{'invisible': [('sync_multi_session_offline', '=', False)], 'required' : [('sync_multi_session_offline', '=', True)]}"
+                                   widget="many2many_tags"
+                            />
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

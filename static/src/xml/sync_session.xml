@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="button_test_sync">
+        <button class="control-button">
+            <i class='fa fa-bug' /> Test Sync
+        </button>
+    </t>
+
+    <t t-name="button_remove_orders">
+        <button class="control-button">
+            <i class='fa fa-trash' /> Remove Orders
+        </button>
+    </t>
+
+    <t t-name="button_sync_selected_order">
+        <button class="control-button">
+            <i class='fa fa-refresh' /> Sync selected Order
+        </button>
+    </t>
+
+    <t t-name="reboot_iot_box">
+        <button class="control-button">
+            <i class='fa fa-bug' /> Reboot IoT Boxes
+        </button>
+    </t>
+
+
+    <t t-extend="Orderline">
+        <t t-jquery="div[class*='extra_functions']" t-operation="append">
+            <t t-if="widget.pos.config.display_person_add_line and line.selected and line.session_info and line.session_info.user and line.session_info.date">
+                <ul class="bus-info">
+                    <i class="fa fa-refresh"/>  <t t-esc="line.session_info.user.name"/> added at <t t-esc="line.session_info.date"/>
+                </ul>
+            </t>
+        </t>
+    </t>
+
+</templates>

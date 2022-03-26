@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="pos_bus1" model="pos.bus">
+            <field name="name">Sync Point 1</field>
+        </record>
+
+        <record id="pos_bus2" model="pos.bus">
+            <field name="name">Sync Point 2</field>
+        </record>
+
+
+    </data>
+</odoo>
